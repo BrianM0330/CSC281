@@ -1,8 +1,9 @@
 package week2;
 import java.util.Scanner;
 
-// Brian Mendoza
-// Put your collaboration statement here
+// Brian Mendoza.
+// I worked with a tutor to help me tidy up some of the loose ends in my code and to help
+// me understand exceptions a little better 
 
 public class Hw2 {
 
@@ -77,10 +78,22 @@ public class Hw2 {
 	// it raises an IllegalArgumentException
 	// If value is < 0 it also raises an IllegalArgumentException
 	public static int countValues(int [] ages, int value) throws IllegalArgumentException {
+		int age[] = {10,12,22,27,51,81};
+		int occurences = 0; 
+		
 		System.out.println("Entering the countValues method ...");
-		// Put your code here
+		if (age.length > 0 && value > 0) { //If both age and value are >0
+			for (int i=1; i < age.length; i++ ) {
+				if (age[i] > value) {
+					occurences++;
+				}
+			}
+		}
+		
+		else { 
+			throw new IllegalArgumentException("One of your values is negative..");
+		}
 		System.out.println("Leaving the countValues method ...");
-		// A stub -- delete once you write the method
-		return 0;
+		return occurences;
 	}
 }
