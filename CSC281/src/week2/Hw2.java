@@ -2,17 +2,15 @@ package week2;
 import java.util.Scanner;
 
 // Brian Mendoza.
-// I worked with a tutor to help me tidy up some of the loose ends in my code and to help
-// me understand exceptions a little better 
+// I worked with tutor Matt Erickson to explain the try block and nudge me in the right direction for creating a newline for the last element.
+// In total I worked with 2 people - myself and Matt on this assignment.
 
 public class Hw2 {
 
-	// Do not modify this method except to test your partially completed program.
-	// The final version should use the main as originally provided to you.
-	// All of your work will be in writing the three methods found below.
 	public static void main(String[] args) {
 		
 		try
+		
 		{
 			int val = enterPos();
 			int [] ages = new int[val];
@@ -46,16 +44,14 @@ public class Hw2 {
 	}
 	// A method that prints a 1D int array to standard output, all on one line with commas between each element
 	public static void printArray(int[] output) {
-		int[] number = {1,2,3,4,5,6}; //defined array? 
-		if (number.length > 0 ) { //only if the array is not empty 
-			for (int i=0; i < number.length-1; i++) { //index, for all but the last in array
-				System.out.print(number[i] + ", "); //print the numbers from the list w comma
+		if (output.length > 0 ) { //only if the array is not empty 
+			for (int i=0; i < output.length-1; i++) { //index, for all but the last in array
+				System.out.print(output[i] + ", "); //print the numbers from the list w comma excluding last
 			}
-		} //Is this where the newline part of the problem would go? Outside the for loop
+			System.out.println(output[output.length-1]); //prints the last number with a newline at the end
+		}
 	}
 
-	// Write this method
-	// A method that enters a positive integer from the user
 	public static int enterPos() {
 		int position;
 		Scanner myScan = new Scanner(System.in); //Declared the scanner 
@@ -71,27 +67,20 @@ public class Hw2 {
 		return position;
 	}
 
-	// Write this method
-	// A method that returns the number of ages greater than or equal to value in
-	// the array ages
-	// If an empty array or an array with negative values is passed as a parameter
-	// it raises an IllegalArgumentException
-	// If value is < 0 it also raises an IllegalArgumentException
 	public static int countValues(int [] ages, int value) throws IllegalArgumentException {
-		int age[] = {10,12,22,27,51,81};
 		int occurences = 0; 
 		
 		System.out.println("Entering the countValues method ...");
-		if (age.length > 0 && value > 0) { //If both age and value are >0
-			for (int i=1; i < age.length; i++ ) {
-				if (age[i] > value) {
+		if (ages.length > 0 && value > 0) { //If both age and value are >0
+			for (int i=1; i < ages.length; i++ ) {
+				if (ages[i] > value) {
 					occurences++;
 				}
 			}
 		}
 		
 		else { 
-			throw new IllegalArgumentException("One of your values is negative..");
+			throw new IllegalArgumentException();
 		}
 		System.out.println("Leaving the countValues method ...");
 		return occurences;
