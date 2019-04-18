@@ -1,0 +1,9 @@
+1. Run me through the try block 
+	What is line 18 new int[val]? 
+	Start += 20? 
+	Does uncommenting out lines tell the try to run those? 
+2. Am I using array from line 18 in the other methods? If so, how?
+3. How can I test my printArray? In the future how can I test only specific functions? 
+4. Is enterPos used as a value for countValues?
+5. line 80 - Do I need this since I'm using that array in the try? 
+6. line 87 - Is this what I want? 
