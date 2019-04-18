@@ -1,16 +1,18 @@
 package week3;
 
+import java.util.*;
+
 public class CompileErrors {
 
 	public static void main(String[] args) {
-		int [] nums = {1, 2, 3, 4, 5, 6, 7, 8};
-		theScan = new Scanner(System.in);
+		double [] nums = {1, 2, 3, 4, 5, 6, 7, 8};
+		Scanner theScan = new Scanner(System.in);
 		
 		System.out.print("The array values are:");
-		printArray(nums)
+		printArray(nums);
 		
 		System.out.print("Enter your favorite whole number: ");
-		val = theScan.nextInt();
+		int val = theScan.nextInt();
 		System.out.println("I like the value " + val + " too!");
 		
 		System.out.println("Thanks for using the program!");
@@ -19,10 +21,10 @@ public class CompileErrors {
 
 	}
 	
-	public boolean printArray(double[] anArray) {
-		for (i = 0; i < anArray.length; i++)
+	public static void printArray(double[] anArray) {
+		for (int i = 0; i < anArray.length; i++) {
 			System.out.print(anArray[i] + " ");
-		System.out.println()
+		System.out.println();
+		}
 	}
-
 }
