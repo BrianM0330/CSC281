@@ -28,16 +28,17 @@ public class Hw3 {
 		System.out.println("Entering the getPosInt method ...");
 		//added int to max to declare it as a variable of type int
 		
-		int max = 0;
+		int max = 0; 
 		String maxS;
 		
-		while (max <= 0); 
+		//added {} to encompass the body of the while loop the ; was preventing it from running (this was making me really mad)
+		while (max <= 0) {
 			System.out.print("Enter a positive (> 0) whole number: ");
 			maxS = theScan.nextLine();
 			max = Integer.parseInt(maxS);
 			if (max <= 0) 
 				System.out.println("Please enter a positive (> 0) number.");
-		
+		}
 		System.out.println("Leaving the getPosInt method ...");
 		return max;
 	}
