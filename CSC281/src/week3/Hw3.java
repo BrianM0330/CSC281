@@ -1,19 +1,12 @@
 package week3;
 
-// Put your name here
-// Put your collaboration statement here
+//Brian Mendoza 
+//I worked alone on this assignment.
 
 import java.util.*;
 
 public class Hw3 {
 
-	// This method should not change in your submission version.
-	// All changes to make the program work should be done in the
-	// three methods below.
-	// The compilation errors here are the fault of the methods below,
-	// not the main method.
-	// When the methods below are correctly fixed/written, this main
-	// will work as desired.
 	public static void main(String[] args) {
 		Scanner aScan = new Scanner(System.in);
 	
@@ -28,13 +21,14 @@ public class Hw3 {
 		aScan.close();	
 	}
 	
-	// The method below contains compilation and runtime errors which you 
-	// should: 1. correct and 2. mark so that I can see the changes you've made.
-	// Do not change the basic functioning of the method -- just make it run.
 	// There are three compilation errors and two runtime errors
-	public static getPosInt(theScan) {
+	public static int getPosInt(Scanner theScan) {
+		//added variable type Scanner to theScan to resolve issue with VariableDeclaratorID
+		//added int at the end of public static so it can return an int for main 
 		System.out.println("Entering the getPosInt method ...");
-		max = 0;
+		//added int to max to declare it as a variable of type int
+		
+		int max = 0;
 		String maxS;
 		
 		while (max <= 0); 
@@ -48,25 +42,32 @@ public class Hw3 {
 		return max;
 	}
 	
-	// Write this method
 	public static String[] getCities(int m, Scanner theScan) {
-		// A stub -- delete when you write the method
+		String[] cities = new String[m];
+		String cityName;
+		for (int i = 0; i< cities.length; i++) 
+		{
+			cityName = theScan.nextLine();
+			cities[i] = cityName;
+		}
 		return new String[0];
 	}
 	
-	// The method below contains compilation and runtime errors which you 
-	// should: 1. correct and 2. mark so that I can see the changes you've made.
-	// Do not change the basic functioning of the method -- just make it run.
+	
 	// There are four compilation errors and one runtime error
-	public String getLargest(String sArray) {
+	public static String getLargest(String [] sArray) {
+		//added Static to resolve issues with using this method in main
+		//Turned regular String into an array by adding [] (resolve the issues in for loop)
 		System.out.println("Entering the getLargest method ...");
-		maxPos = 0;
+		//added int to declare maxPos as an variable of the type integer 
+		int maxPos = 0;
 		for (int index = 1; index < sArray.length; index--)
     	{
         	if (sArray[index].compareTo(sArray[maxPos]) > 0)
             	maxPos = index;
     	}
 		System.out.println("Leaving the getLargest method ...");
-		return sArray[maxPos]
+		//added semicolon at end of return statement to resolve Syntax error 
+		return sArray[maxPos];
 	}
 }
