@@ -12,7 +12,6 @@ public class Hw3 {
 	
 		System.out.println("How many cities are there? ");
 		int max = getPosInt(aScan);
-		
 		String[] cities = getCities(max, aScan);
 		
 		System.out.println("The maximum city (alphabetically) you entered is: ");
@@ -43,15 +42,24 @@ public class Hw3 {
 		return max;
 	}
 	
+//The method takes an integer m and a Scanner object as parameters. It first creates
+//an array of m Strings. It enter m cities from the user using the scanner and places
+//them into the array. Finally, it returns the filled array of names. The method
+//should not open or close a scanner - this is done in main.
 	public static String[] getCities(int m, Scanner theScan) {
-		String[] cities = new String[m];
+		String[] cities = new String[m]; //creating an array city of m strings 
 		String cityName;
-		for (int i = 0; i< cities.length; i++) 
-		{
+		System.out.println("Entering the getCities method ...");
+		while (cities.length <= m) { //maybe this is the issue? 
+			System.out.print("Enter a city: ");
 			cityName = theScan.nextLine();
-			cities[i] = cityName;
+			for (int i=0; i < 1; i++)
+			{
+				cities[i] = new String(cityName);
+			}
 		}
-		return new String[0];
+
+		return cities;
 	}
 	
 	
