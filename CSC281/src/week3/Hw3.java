@@ -48,14 +48,12 @@ public class Hw3 {
 //should not open or close a scanner - this is done in main.
 	public static String[] getCities(int m, Scanner theScan) {
 		String[] cities = new String[m]; //creating an array city of m strings 
-		String cityName;
 		System.out.println("Entering the getCities method ...");
-		while (cities.length <= m) { //maybe this is the issue? 
-			System.out.print("Enter a city: ");
-			cityName = theScan.nextLine();
-			for (int i=0; i < 1; i++)
+		if (cities.length <= m) { 
+			for (int i=0; i < cities.length; i++)
 			{
-				cities[i] = new String(cityName);
+				System.out.print("Enter a city: ");
+				cities[i] = theScan.nextLine();
 			}
 		}
 
@@ -70,7 +68,9 @@ public class Hw3 {
 		System.out.println("Entering the getLargest method ...");
 		//added int to declare maxPos as an variable of the type integer 
 		int maxPos = 0;
-		for (int index = 1; index < sArray.length; index--)
+		//Not sure if I changed how the fundamental problem works but I changed index-- to index++ and I changed index to 0 because it was throwing an
+		//IndexOutOfBoundsException. 
+		for (int index = 0; index < sArray.length; index++)
     	{
         	if (sArray[index].compareTo(sArray[maxPos]) > 0)
             	maxPos = index;
