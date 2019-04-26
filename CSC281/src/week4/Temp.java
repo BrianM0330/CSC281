@@ -11,7 +11,7 @@ public class Temp
 	// Feel free to use local variables as necessary in each method
 	private double tValue;
 	// If you like, you can change the type of scale to Character
-	private char scale;
+	private Character scale;
 	
 	private Scanner vScan = new Scanner(System.in);
 
@@ -23,20 +23,28 @@ public class Temp
  	}
 
  	// The parameterized constructor for the class
-	public Temp(double initT, char initS) //This is the one used in lines 12-15 in the driver
+	public Temp(double initT, Character initS) //This is the one used in lines 12-15 in the driver
 	{
 		this.scale = initS; //Declares the scale to be uased as initS
 		this.tValue = initT; //Declares the temperature to be used as initT
-	}
 
+		if ( Character.toLowerCase(initS) == 'c' ) {
+			scale = initS;
+		}
+		else if ( Character.toLowerCase(initS) == 'f') {
+			scale = initS;
+		}
+		else {
+			scale = 'f';
+		}
+	}
+	
  	// Input values for the instance variables using the Scanner vScan
  	public void set()
  	{
 		// You can omit this statement if you wish
 		// It's designed to help you figure out what belongs in this method
  		System.out.println("Entering the set method.");
-	  	
- 		tempType = aScan.
  		
 		// You can omit this statement if you wish
 		// It's designed to help you figure out what belongs in this method
