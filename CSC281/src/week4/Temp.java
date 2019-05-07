@@ -14,7 +14,7 @@ public class Temp {
 
 	public Temp() {
 		this.tValue = 32.0;
-		this.scale = 'f';
+		scale = 'f';
 	}
 
 	public Temp(double initT, Character initS) {
