@@ -1,3 +1,5 @@
+//Brian Mendoza. I worked alone on this assignment.
+
 package week5;
 
 public class FootballGame {
