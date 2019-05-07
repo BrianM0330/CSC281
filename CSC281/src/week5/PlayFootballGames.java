@@ -1,4 +1,4 @@
-package hw5;
+package week5;
 
 public class PlayFootballGames {
 

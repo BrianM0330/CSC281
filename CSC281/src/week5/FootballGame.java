@@ -1,4 +1,4 @@
-package hw5;
+package week5;
 
 public class FootballGame {
 	
@@ -14,35 +14,56 @@ public class FootballGame {
 		this.team1 = "Lane Tech";
 		this.team2 = "Walter Payton";
 
-		team1Score = final;
-		team2Score = final;
+		team1Score = MIN_SCORE;
+		team2Score = MIN_SCORE;
+
+		totalGames = totalGames +1;
 	}
 	
 	public FootballGame(String t1, String t2) {
+		this.team1 = t1;
+		this.team2 = t2;
 
+		team1Score = MIN_SCORE;
+		team2Score = MIN_SCORE;
+
+		totalGames = totalGames +1;
 	}
 	
 	public String getTeam1() {
-		// A stub -- change or remove
-		return "";
+		return team1;
 	}
 	
 	public String getTeam2() {
-		// A stub -- change or remove
-		return "";
+		return team2;
 	}
 	
 	public boolean incrScore(String team, int score) {
-		// A stub -- change or remove
-		return false;
+		if (score == 1 || score == 2 || score == 3 || score == 6) {
+			if (team.equals(team1)) {
+				team1Score = team1Score + score;
+				totalScore = totalScore + score;
+				return true;
+			} else {
+				team2Score = team2Score + score;
+				totalScore = totalScore + score;
+				return true;
+			}
+		} else {
+			return false;
+		}
 	}
 	
 	public void display() {
-
+		System.out.println("The current score is: " + team1 + ": " + team1Score + ", " + team2 + ": " + team2Score);
 	}
 	
 	public static double getAvg() {
-		// A stub -- change or remove
-		return 0.0;
+		if (totalGames > 0) {
+			return totalScore/totalGames;
+		}
+		else {
+			return 0.0;
+		}
 	}
 }
