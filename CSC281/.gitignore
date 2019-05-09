@@ -1,1 +1,7 @@
 /bin/
+C:\Users\BMENDO13\git\CSC281\CSC281\ideafiles
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
