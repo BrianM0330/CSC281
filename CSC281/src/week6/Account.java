@@ -22,6 +22,7 @@ public class Account
 	}
 	
 	public boolean equals(Account other) {
+
 		return acctNum.equals(other.acctNum);
 	}
 
