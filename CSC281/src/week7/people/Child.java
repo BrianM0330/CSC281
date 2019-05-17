@@ -8,9 +8,6 @@ import week7.Person;
 import java.time.LocalDate;
 
 public class Child extends Person implements Comparable<Child>{
-
-	// Do not add any additional members to the class
-	// If you wish to use local variables in the method you may
 	
 	private String parent;
 	
@@ -19,16 +16,17 @@ public class Child extends Person implements Comparable<Child>{
 	
 	public Child() {
 		name = "Erin";
+		parent = "Amber Settle";
 		LocalDate today = LocalDate.now();
 		bYear = today.getYear() - D_AGE;
 	}
 	
 	public Child(String n, int y, String p) {
-
+	    name = n; parent = p;
 		LocalDate today = LocalDate.now();
 		int theYear = today.getYear();
 
-		if (y < AGE_MAJ) {
+		if (y < theYear - AGE_MAJ) {
 			bYear = y;
 		}
 		else {
@@ -37,11 +35,18 @@ public class Child extends Person implements Comparable<Child>{
 	}
 	
 	public int compareTo(Child other) {
+        LocalDate today = LocalDate.now();
+        int theYear = today.getYear();
 
-		return 0;
+	    if (this.bYear - theYear < other.bYear - theYear)
+	        return -1;
+	    else if (this.bYear > other.bYear - theYear)
+	        return 1;
+	    else
+	        return 0;
 	}
 	
 	public String toString() {
-		return String.format("Name: %s, birth year: %d, parent: ", name, bYear) + parent ;
+		return String.format("Name: %s, birth year: %d, parent: %s", name, bYear, parent);
 	}
 }
