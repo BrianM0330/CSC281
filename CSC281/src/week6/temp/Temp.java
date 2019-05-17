@@ -62,7 +62,7 @@ public class Temp
 	}
 
 	// Return the temperature in Fahrenheit
-	public double getF()
+	protected double getF()
 	{
 		double value;
 

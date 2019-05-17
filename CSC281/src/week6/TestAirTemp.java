@@ -15,10 +15,10 @@ public class TestAirTemp {
 		AirTemp t2 = new AirTemp(-100, 'c');
 		System.out.println("The second object: " + t2);
 		System.out.println("The number of AirTemp objects: " + AirTemp.getNumAir());
-		AirTemp t3 = new AirTemp(150, 'F');
+		AirTemp t3 = new AirTemp(-100, 'c');
 		System.out.println("The third object: " + t3);
 		System.out.println("The number of AirTemp objects: " + AirTemp.getNumAir());
-		AirTemp t4 = new AirTemp(32, 'f');
+		AirTemp t4 = new AirTemp(50, 'F');
 		System.out.println("The fourth object: " + t4);
 		System.out.println("The number of AirTemp objects: " + AirTemp.getNumAir());
 		System.out.println("Are the first and second objects the same? " + t1.equals(t2));
