@@ -1,4 +1,6 @@
-package week7.people;
+package week7;
+
+import week7.people.Child;
 
 public class Hw7 {
 
