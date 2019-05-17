@@ -1,7 +1,9 @@
 package week7.people;
 
-// Put your name here
+// Brian Mendoza
 // Put your collaboration statement here
+
+import week7.Person;
 
 import java.time.LocalDate;
 
@@ -16,20 +18,30 @@ public class Child extends Person implements Comparable<Child>{
 	private final int D_AGE = 15;
 	
 	public Child() {
-		
+		name = "Erin";
+		LocalDate today = LocalDate.now();
+		bYear = today.getYear() - D_AGE;
 	}
 	
 	public Child(String n, int y, String p) {
-		
+
+		LocalDate today = LocalDate.now();
+		int theYear = today.getYear();
+
+		if (y < AGE_MAJ) {
+			bYear = y;
+		}
+		else {
+			bYear = theYear - D_AGE;
+		}
 	}
 	
 	public int compareTo(Child other) {
-		// A stub -- replace when you write the class
+
 		return 0;
 	}
 	
 	public String toString() {
-		// A stub -- replace when you write the class
-		return "";
+		return String.format("Name: %s, birth year: %d, parent: ", name, bYear) + parent ;
 	}
 }
