@@ -26,7 +26,7 @@ public class Child extends Person implements Comparable<Child>{
 		LocalDate today = LocalDate.now();
 		int theYear = today.getYear();
 
-		if (y < theYear - AGE_MAJ) {
+		if (theYear - y < AGE_MAJ) {
 			bYear = y;
 		}
 		else {
