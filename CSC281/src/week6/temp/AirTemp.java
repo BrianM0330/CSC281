@@ -3,7 +3,7 @@ package week6.temp;
 //Brian Mendoza. No collaborators.
 
 public class AirTemp extends Temp {
-	
+
 	private final int MAXC = 60;
 	private final int MINC = -90;
 	private final int MAXF = 140;
