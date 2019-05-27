@@ -1,50 +1,51 @@
-// To use or not as you wish
 package week8; //!!!!!!!!!!!!!!!!!!!!!! CHANGE BACK TO hw8
 
 // Brian Mendoza
-// Worked alone.
+// Worked with tutor.
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class NumArrayList<T extends Number>{
+public class NumArrayList<T extends Number> {
 
 	private ArrayList<T> L;
 
 	public NumArrayList() {
 		this.L = new ArrayList<>();
 	}
-	
-	// Create a new NumArrayList, initializing it with the parameter
+
+	 //Create a new NumArrayList, initializing it with the parameter
 	public NumArrayList(T[] initValues) {
-		L = new ArrayList<>();
-		for (element : initValues) {
-			L.add(element);
+		L = new ArrayList<>(); //WHY DID THIS WORK (Creates new ArrayList, but how does it use type T?
+		//Basically, I kind of get what type T means but maybe you can explain it better
+		for (T i: initValues) { //for value i type T in the array initValues
+			this.L.add(i); //add that value to the arrayList
 		}
 	}
-	
+
 	public void add(T elem) {
-	
+		this.L.add(elem);
 	}
-	
-	// Uncomment out and write this method
-	// There isn't a reasonable stub I can put in it
-	//public T get(int index) {
-	//	
-	//}
+
+	public T get(int index) {
+		return this.L.get(index);
+	}
 
 	// Return the String representation of the NumArrayList
 	public String toString() {
-		// replace this with the correct implementation
-		return "";
+		String toPrint = "";
+		for (T s : this.L) //Iterator variable type T named S, going through L.
+			toPrint = toPrint + s.toString() + " ";
+		return toPrint;
 	}
 
-	
+
+
 	// Multiply the NumArrayList by an Integer value
-	public NumArrayList<Integer> iMult(Integer val) {
-		NumArrayList<Integer> product = new NumArrayList<Integer>();
-		// Put your code to fill the NumArrayList product here
-		return product;
+	public NumArrayList<Integer> iMult(Integer val) { //explain this a little? wtf is iMult?
+		NumArrayList<Integer> product = new NumArrayList<>(); //the NumArrayList of type integer named product
+		for (T i:L) //for an i type T in the existing arrayList L
+			product.add(  i.intValue()  *val); //add the integer value of i (the current value in L) (could be a double) and then multiply THAT value by val
+		return product; //return the numArrayList named product
 	}
 }
 

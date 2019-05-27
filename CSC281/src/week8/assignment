@@ -1,0 +1,53 @@
+Assignment 8
+Due Wednesday, May 29th, 9 pm
+
+This assignment is challenging. Please start early.
+
+Reading
+Read Sections 1.8.3, 1.8.5, 1.8.6, 6.1, 6.2, 6.3, 6.4, and 6.6 in Core Java for the Impatient by Cay S. Horstmann.
+
+Logistics
+In this class programming assignments may be completed in consultation with up to four other classmates. You must identify the classmates with whom you collaborate in a comment at the top of the assignment, and the total number of collaborators on any assignment may not exceed four people. You must also submit a comment at the top of each assignment that describes in detail how each collaborator contributed to the assignment. You may not under any circumstances discuss the assignments with classmates other than your identified collaborators. Working so closely with anyone other than your identified collaborators or Dr. Settle, so as to produce identical or near identical code is a violation of the Academic Integrity policy. This policy will be strictly enforced.
+
+Please include the following with your assignment submission:
+
+A comment at the top of your Java file identifying any classmates with whom you discussed or in any other way collaborated on the assignment. You may work with no more than four other people.
+
+Add a comment at the top of your Java file that describes for each person what they contributed to the assignment. This must be at least 2-3 sentences and be very specific.Please make sure to read the Academic Integrity pledge for more details about the types of collaboration that are allowed.
+
+A submission that does not include a list of collaborators and a comment describing each person's contributions when you collaborated with classmates will earn a 0. People who worked alone should put a comment at the top of their file indicating that or they will also earn a 0. There will be no exceptions to this rule.
+
+Remember that everyone submitting the assignment must be able to explain all of the code submitted, regardless of the type of collaboration that occurred. Anyone submitting code they cannot explain is violating the Academic Integrity policy and will earn a 0 on the assignment.
+
+Assignment
+For this assignment you will write a class NumArrayList which is a generic type for an ArrayList that contains numeric values. I have provided a template for the class found in the NumArrayList.java file posted to D2L. You should begin your assignment by downloading that template.
+
+The NumArrayList class has a single private instance variable L of type ArrayList<T> where T is a type that extends the abstract class Number. For example, both Integer and Double extend Number.  You are not allowed to create any extra variables in the class, other than variables local to the methods.
+
+You will complete the assignment by writing the following methods for the NumArrayList class:
+
+public NumArrayList(): The default constructor for the class. It instantiates the internal ArrayList L in the NumArrayList object by making an appropriate call to the ArrayList constructor.
+public NumArrayList(T[] initValues): The parameterized constructor for the class. It instantiates the internal ArrayList L in the NumArrayList object by making an appropriate call to the ArrayList constructor. It then places the values in the array initValues into the new ArrayList object L.
+public void add(T elem): The method adds the parameter to the internal ArrayList object L. Note that this method should be very short (1-2 lines).
+public T get(int index): The method returns the element found in the internal ArrayList object L in position index. Note that this method should be very short (1-2 lines).
+public String toString(): This method returns a String containing the elements found in the internal ArrayList object L. The elements should be separated by a space and the String should end with a newline. I suggest that you use a loop to build the String the method should return.
+public NumArrayList<Integer> iMult(Integer val): The method returns a new NumArrayList object containing Integers which is created by taking the calling NumArrayList object and multiplying each of the values found in its internal ArrayList by val. You will need to use the intValue() method of the T class in order to implement this method.
+I have provided a driver program (e.g. a main method that uses the NumArrayList class) TestNumArrayList.java to help you test your code which has been posted to D2L. Be aware that I may add to that program, so if you feel that any of your methods haven't been tested effectively by the driver program, please modify as necessary. However, you should only submit the NumArrayList.java class.
+
+Below is the sample output that the test program produces for my solution to the NumArrayList class. Be aware that the test program puts random numbers into the lists, so the actual values you see when you run this likely will differ from what you see below:
+
+The Integer NumArrayList: 96 98 97 2 38 66 81 31 50 48
+
+The Double NumArrayList:
+95.35
+35.28
+90.41
+37.68
+2.99
+11.11
+22.40
+94.84
+28.25
+46.84
+
+The result of calling iMult: 960 980 970 20 380 660 810 310 500 480

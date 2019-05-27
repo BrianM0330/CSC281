@@ -18,10 +18,9 @@ public class TestNumArrayList {
 			dArrLst.add(100* Math.random());
 		
 		System.out.println("The Double NumArrayList: ");
-		// Put this code back in when you write the get method
-		/*for (int i = 0; i < arrSize; i++)
+		for (int i = 0; i < arrSize; i++)
 			System.out.printf("%.2f\n", dArrLst.get(i));
-		System.out.println();*/
+		System.out.println();
 		
 		NumArrayList<Integer> secIArrLst = iArrLst.iMult(arrSize);
 		System.out.println("The result of calling iMult: " + secIArrLst);
