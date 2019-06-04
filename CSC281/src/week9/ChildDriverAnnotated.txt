@@ -1,0 +1,33 @@
+package week9;
+import java.util.Arrays;
+
+public class ChildDriver extends Child implements Comparable <Child> {
+
+    final static int MAX = 3; //step A
+    public static void main(String[] args) {
+
+        //steps B and C
+       Child[] kids = new Child[MAX]; //An array of the type child named childArray is created with the length of MAX
+       kids[0] = new Child(); //default constructor
+       kids[1] = new Child("Joon", 1994, "Jeff Elam");
+       kids[2] = new Child("Prudence", 2007, "Andre Berthiaume");
+
+       //step D
+       System.out.println("The children: " + Arrays.toString(kids)); //using builtin toString method
+
+       Arrays.sort(kids); //already implements comparable with the header. Issue was the MAX amount of entries
+
+        //step E
+       System.out.println("The child Array, after sorting (using compareTo): " + Arrays.toString(kids));
+
+        //step F
+        Arrays.sort(kids, (first, second) -> first.getParent().compareTo(second.getParent()));
+        //Using the sort method, but we are passing a lambda.
+        //Arrays.sort(kids array ,
+                        //lambda expression (Child first, Child second) -> first.parentname.compareTo ( second.parentName() )
+
+        //step G
+        System.out.println("The child array, after sorting (using the lambda): " + Arrays.toString(kids));
+    }
+
+}
